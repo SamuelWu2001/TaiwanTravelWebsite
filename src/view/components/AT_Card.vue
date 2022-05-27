@@ -1,6 +1,6 @@
 <template>
     <div @click="info" v-for="(ac) in [FindAc(this.id)]" class="Ac-card shadow" style="cursor:pointer;">
-        <div style="flex:3">
+        <!-- <div style="flex:3">
             <img :src=ac.Image style="width:100%;height:100%;padding:15px;">
         </div>
         <div style="flex:7;">
@@ -10,7 +10,7 @@
         <div
             style="margin:10px;height:30%;width:90%; border-radius: 10px;;color:aliceblue;background: rgb(17,126,209);flex:1;padding-top:10px;font-size:25px;font-weight:bolder;">
             {{ ac.Rate }}
-        </div>
+        </div> -->
     </div>
 </template>
 <script>
@@ -21,15 +21,15 @@ export default ({
         ...mapGetters(["FindAc"]),
     },
     methods: {
-        // FindAc(id) {
-        //     console.log('Samuel')
-        //     console.log(id);
-        //     console.log(this.FindAc(id));
-        //     return this.FindAc(id);
-        // },
+        FindAc(id) {
+            console.log('Samuel')
+            console.log(id);
+            console.log(this.FindAc(id));
+            return this.FindAc(id);
+        },
         info: function () {
             this.$router.push({
-                path: `/AcInfo`,
+                path: `/AtInfo`,
                 query: {
                     ID: this.id,
                 }

@@ -1,8 +1,8 @@
 <template>
-<div >
-<Navbar />
-<router-view style=""></router-view>
-</div>
+  <div>
+    <Navbar />
+    <router-view style=""></router-view>
+  </div>
 </template>
 <script>
 // This starter template is using Vue 3 <script setup> SFCs
@@ -12,8 +12,8 @@ export default {
   components: {
     Navbar,
   },
-  data(){
-    return{
+  data() {
+    return {
     };
   },
 };
