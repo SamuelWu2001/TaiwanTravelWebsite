@@ -67,6 +67,9 @@ export default new Vuex.Store({
     FindAt: state => (id) => {
       return state.AtList.find(AtList => AtList.ID === id)
     },
+    FindRe: state => (id) => {
+      return state.ReList.find(ReList => ReList.ID === id)
+    },
   }
 });
 

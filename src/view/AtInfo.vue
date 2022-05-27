@@ -1,7 +1,6 @@
 <template>
-    <div style="display:flex; justify-content: center;align-items: center;">
-        <div>ID : {{ this.id }}</div>
-        <!-- <div @click="info" v-for="(at) in [FindAt(this.id)]" class="at-info shadow">
+    <div style="display:flex; justify-content: center; align-items: center;">
+        <div @click="info" v-for="(at) in [FindAt(this.id)]" class="At-info shadow">
             <div style="font-size:50px;font-weight: bolder;padding-top:30px;">
                 <a>{{ at.Title }}</a>
             </div>
@@ -18,7 +17,7 @@
                 <iframe :src=at.GoogleMapKey width="600" height="400" style="border:0;margin-bottom:50px;"
                     allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-        </div> -->
+        </div>
     </div>
 </template>
 

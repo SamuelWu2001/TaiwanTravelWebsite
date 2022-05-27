@@ -1,6 +1,6 @@
 <template>
     <div style="margin: 10px;">
-        <input id="text_input" v-model="keyword" placeholder="Search Here">
+        <input id="text_input" v-model="text" placeholder="Search Here">
         <button id="Search_btn">Search</button>
     </div>
     <div v-for="(at) in AtList" style="display:flex; justify-content: center;align-items: center;">
