@@ -3,7 +3,7 @@
         <input id="text_input" v-model="keyword" placeholder="Search Here">
         <button id="Search_btn">Search</button>
     </div>
-    <div v-for="(at) in AtList" style="display:flex;justify-content: center;align-items: center;">
+    <div v-for="(at) in AtList" style="display:flex; justify-content: center;align-items: center;">
         <ATCard :ID="at.ID" />
     </div>
 </template>

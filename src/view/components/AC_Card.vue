@@ -21,15 +21,15 @@ export default ({
         ...mapGetters(["FindAc"]),
     },
     methods: {
-        // FindAc(id) {
-        //     console.log('Samuel')
-        //     console.log(id);
-        //     console.log(this.FindAc(id));
-        //     return this.FindAc(id);
-        // },
+        FindAc(id) {
+            console.log('Samuel')
+            console.log(id);
+            console.log(this.FindAc(id));
+            return this.FindAc(id);
+        },
         info: function () {
             this.$router.push({
-                path: `/AcInfo`,
+                path: '/AcInfo',
                 query: {
                     ID: this.id,
                 }
