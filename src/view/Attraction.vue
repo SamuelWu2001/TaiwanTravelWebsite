@@ -1,10 +1,11 @@
 <template>
     <div style="margin: 10px;">
-        <input id="text_input" v-model="text" placeholder="Search Here">
-        <button id="Search_btn">Search</button>
+        <input id="text_input" v-model="keyword" placeholder="Search Here">
+        <button @click="processFormData()"  id="Search_btn">Search</button>
     </div>
-    <div v-for="(at) in AtList" style="display:flex; justify-content: center;align-items: center;">
-        <ATCard :ID="at.ID" />
+    <div v-for="(at) in AtList" :key="AtList" style="display:flex; justify-content: center;align-items: center;">
+        <ATCard :ID="at.ID" :key="AtList" />
+        <!-- {{at}} -->
     </div>
 </template>
 
@@ -12,6 +13,8 @@
 
 import ATCard from './components/AT_Card.vue'  //可以不管
 import { mapState, mapGetters } from 'vuex';
+import axios from 'axios';
+import store from '../store'
 export default {
     components: {
         ATCard,
@@ -25,6 +28,25 @@ export default {
         return {
             keyword: ''
         }
+    },
+    methods:{
+        processFormData: function(){
+            this.$router.push({
+                path: '/Attraction',
+                query: {
+                    keyword : this.keyword,
+                }
+            });
+            axios.get("http://127.0.0.1:5000/api/LoadATdata",{
+              params:{
+                keyword : this.keyword,
+              }
+            })
+            .then((res)=>{
+                console.log('資料 : ',res.data)
+                store.dispatch("LoadATdata", res.data);
+            })
+        },
     }
 }
 

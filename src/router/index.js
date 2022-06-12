@@ -11,6 +11,8 @@ import AtInfo from '../view/AtInfo.vue'
 import ReInfo from '../view/ReInfo.vue'
 import Route from '../view/Route.vue'
 import User from '../view/User.vue'
+import AddRoute from '../view/AddRoute.vue'
+import RtInfo from '../view/RtInfo.vue'
 
 const routes = [
   {
@@ -36,7 +38,16 @@ const routes = [
   {
     path: '/Route',
     name: 'Route',
-    component: Route
+    component: Route,
+    beforeEnter:(to,from,next) => {
+      axios.get("http://127.0.0.1:5000/api/LoadRoute")
+      .then((res)=>{
+          console.log('資料 : ',res.data)
+          store.dispatch("LoadRtdata", res.data);
+          console.log('Samuel')
+          next();
+      })
+    }
   },
   {
     path: '/User',
@@ -57,6 +68,16 @@ const routes = [
     path: '/AtInfo',
     name: 'AtInfo',
     component: AtInfo
+  },
+  {
+    path: '/RtInfo',
+    name: 'RtInfo',
+    component: RtInfo
+  },
+  {
+    path: '/AddRoute',
+    name: 'AddRoute',
+    component: AddRoute
   }
 ]
 const router = createRouter({

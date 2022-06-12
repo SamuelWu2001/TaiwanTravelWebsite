@@ -2,63 +2,116 @@ import Vuex from 'vuex'
 
 export default new Vuex.Store({
   state: {
+    pnumber : '',
+    checkin : '',
+    keyword : '',
     AcList: [
-      {
-        ID: 'AC00000001',
-        Title: '雨島旅店',
-        Address: '基隆仁三路8號',
-        Image: "/src/assets/雨島旅店.jpg",
-        Rate: 4.2,
-        Phone: '02-5846125',
-        Wifi: '有',
-        Park: '',
-        GoogleMapKey: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.223667623945!2d121.74270321484381!3d25.128127983928284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x345d4e3e5e12fe35%3A0xa3b061f887ea7615!2zMjAw5Z-66ZqG5biC5LuB5oSb5Y2A5LuB5LiJ6LevOOiZnw!5e0!3m2!1szh-TW!2stw!4v1653476658510!5m2!1szh-TW!2stw",
-      },
-      {
-        ID: 'AC00000002',
-        Title: '華國商務飯店',
-        Address: '基隆愛三路49巷18號',
-        Image: '/src/assets/華國商務飯店.jpg',
-        Rate: 4.0,
-        Phone: '02-2216169',
-        Wifi: '有',
-        Park: '飯店往左走150公尺有公有停車場',
-        GoogleMapKey: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.2201487529937!2d121.74010991484377!3d25.128246983928253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x345d4e15f622d71d%3A0xa8a123671935d794!2zMjAw5Z-66ZqG5biC5LuB5oSb5Y2A5oSb5LiJ6LevNDnlt7cxOOiZnw!5e0!3m2!1szh-TW!2stw!4v1653477500807!5m2!1szh-TW!2stw",
-      },
     ],
+    Acinfo : {
+    },
     AtList: [
+    ],
+    Atinfo :{},
+    ReList: [],
+    ReInfo :{},
+    SpotList:[],
+    User :{
+      ID : '',
+      Name : '',
+      Sex : '',
+      Birth : '',
+      Phone : '',
+    },
+    RouteList : [
       {
-        ID: 'AT00000001',
-        Title: '基隆海洋廣場',
-        Address: '基隆市仁愛區忠一路',
-        Image: "/src/assets/雨島旅店.jpg",
-        Rate: 3.9,
-        VisitHours: '開放式空間，無時間限制。',
-        Ticket: '無門票',
-        Traf_Guide: '1. 基隆火車站下車過天橋即達，或搭乘國光客運於基隆站（海洋廣場前）下車，步行即可抵達。',
-        Park: '基隆東岸地下停車場；另小艇碼頭停車場可停小客車',
-        Phone: "",
-        GoogleMapKey: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.223667623945!2d121.74270321484381!3d25.128127983928284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x345d4e3e5e12fe35%3A0xa3b061f887ea7615!2zMjAw5Z-66ZqG5biC5LuB5oSb5Y2A5LuB5LiJ6LevOOiZnw!5e0!3m2!1szh-TW!2stw!4v1653476658510!5m2!1szh-TW!2stw",
-      },
-      {
-        ID: 'AT00000002',
-        Title: '和平島公園',
-        Address: '基隆市中正區平一路360號',
-        Image: "/src/assets/雨島旅店.jpg",
-        Rate: 4.4,
-        VisitHours: '"05/01-10/31：08:00 - 19:00（18:00 停止售票，19:00休園）11/01-04/30：08:00 - 18:00（17:00 停止售票，18:00休園）"',
-        Ticket: '"全票80元 [ 一般遊客 ] 基隆市民60元 [ 本年度優惠40元/除中正區 ] 敬老票40元 [ 年滿65歲以上長者（需本國籍） ] 學生票40元 [ 6歲~12歲之學童/國中、高中、大學、研究所在學學生 ]"',
-        Traf_Guide: '"1. 搭乘基隆市公車101號於「和平島公園站」下車，步行約5分鐘即可抵達。2. 搭乘T99濱海奇基線於「和平島公園站」下車即可抵達。"',
-        Park: '備停車場',
-        Phone: '02-24635452',
-        GoogleMapKey: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.223667623945!2d121.74270321484381!3d25.128127983928284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x345d4e3e5e12fe35%3A0xa3b061f887ea7615!2zMjAw5Z-66ZqG5biC5LuB5oSb5Y2A5LuB5LiJ6LevOOiZnw!5e0!3m2!1szh-TW!2stw!4v1653476658510!5m2!1szh-TW!2stw",
+        Name : '忠烈祠路線',
+        Time : '2020-02-02 13:40:00',
+        spotlist : [
+          {
+            ID : 'AT00000274',
+            Name : '123456',
+            Address : '',
+            Descritption : '',
+          },
+          {
+            ID : 'AT00000025',
+            Name : '456789',
+            Address : '',
+            Descritption : '',
+          },
+        ],
+        Descritption : '嗨嗨嗨嗨嗨嗨',
+        Price : '5000',
       },
     ],
-    ReList: [],
   },
   mutations: {
+    LoadACdata(state,AcData){
+      console.log('mutations',AcData);
+      state.AcList = AcData;
+    },
+    LoadACinfo(state,Acinfo){
+      console.log('mutations',Acinfo);
+      state.Acinfo = Acinfo;
+    },
+    LoadREdata(state,ReData){
+      console.log('mutations',ReData);
+      state.ReList = ReData;
+    },
+    LoadREinfo(state,Reinfo){
+      console.log('mutations',Reinfo);
+      state.Reinfo = Reinfo;
+    },
+    LoadATdata(state,AtData){
+      console.log('mutations',AtData);
+      state.AtList = AtData;
+    },
+    LoadATinfo(state,Atinfo){
+      console.log('mutations',Atinfo);
+      state.Atinfo = Atinfo;
+    },
+    LoadUser(state,Userinfo){
+      console.log('mutations',Userinfo);
+      state.User = Userinfo;
+    },
+    LoadSpotdata(state,SpotData){
+      console.log('mutations',SpotData);
+      state.SpotList = SpotData;
+    },
+    LoadRoutedata(state,RtData){
+      state.RouteList = RtData;
+      console.log('mutations',RtData);
+    },
   },
   actions: {
+    LoadACdata({commit},data){
+      commit('LoadACdata',data);
+    },
+    LoadACinfo({commit},data){
+      commit('LoadACinfo',data);
+    },
+    LoadREdata({commit},data){
+      commit('LoadREdata',data);
+    },
+    LoadREinfo({commit},data){
+      commit('LoadREinfo',data);
+    },
+    LoadATdata({commit},data){
+      commit('LoadATdata',data);
+    },
+    LoadATinfo({commit},data){
+      commit('LoadATinfo',data);
+    },
+    LoadUser({commit},data){
+      commit('LoadUser',data);
+    },
+    LoadSpotdata({commit},data){
+      commit('LoadSpotdata',data);
+    },
+    LoadRtdata({commit},data){
+      console.log(data);
+      commit('LoadRoutedata',data);
+    },
   },
   getters: {
     FindAc: state => (id) => {
@@ -69,6 +122,9 @@ export default new Vuex.Store({
     },
     FindRe: state => (id) => {
       return state.ReList.find(ReList => ReList.ID === id)
+    },
+    FindRt: state => (Name,Time) => {
+      return state.RouteList.find(RouteList => (RouteList.Name === Name && RouteList.Time === Time))
     },
   }
 });
